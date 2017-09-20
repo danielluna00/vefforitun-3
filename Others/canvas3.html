@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<script>
+var i = 0
+window.onload=function(){
+	var canvas=document.createElement('canvas');
+	//skellum nokkrum eigindum á nóðuna okkar.
+	canvas.id='thecanvas';
+	canvas.width=1850;
+	canvas.height=900;
+	canvas.style.border='1px solid red';
+
+	var ctx = canvas.getContext("2d");
+
+	//linan.
+	ctx.moveTo(40,90);
+	ctx.lineTo(150,90);
+	ctx.stroke(); //prentar linuna
+
+	//hringurinn.
+	ctx.beginPath();
+	ctx.arc(100,50,12,0,2*Math.PI);
+	ctx.stroke(); //prentar hringurinn.
+
+	ctx.rect(20, 20, 150, 150);
+	ctx.stroke();
+
+
+
+	document.body.appendChild(canvas);
+	}
+
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Verkefni II
+Lærðu að hreinsa canvasið.
+Skrifaðu svo eina línu, hreinsaðu canvasið og skrifaðu þessa sömu línu aftur.
+Þess næst, skrifðu setInterval fall sem hreinsar canvasið í hvert skipti og teiknar línuna svo aftur.
+Láttu þess næst línuna teiknast með því að nota breytur.
+Prófaðu svo að breyta gildinu á þessum breytum pínkulítið við hverja ítrún setIntervalsins.
+Nú sérðu línuna hreyfast hægt og rólega.
+---------------------------------------------------------------------------------------------------------------------
+*/
+</script>
+
+
+</body>
+</html>

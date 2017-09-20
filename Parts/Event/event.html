@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="root">
+<span>Texti er:{{display}}</span>
+	<p>{{counter}}</p>
+	<button v-if="counter != 10" @click="plus">Plus One</button>
+	<button v-if="counter != -10"@click="minus">Minus One</button>
+	<input v-model= "texti" type="text" placeholder="Input">
+	<button @click="press">Press It</button>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: "#root",
+		data:{
+			counter : 0,
+			texti : '',
+			display:''
+			},
+		methods:{
+			plus:function(){
+				if(this.counter != 10){
+				   this.counter++;
+				}
+			},
+			minus:function(){
+				if(this.counter != -10){
+					this.counter--;
+				}
+			},
+			press:function(){
+					this.display = this.texti;	
+					this.texti = '';
+			}
+		}
+	});
+
+	</script>
+</body>
+</html>
+</body>
+</html>

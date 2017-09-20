@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="app">
+	<input v-model="task" type="text" placeholder="Input">
+	<button @click="press">Create Task</button>
+	<li v-for= "item in tasks">{{item}}</li>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: "#app",
+		data:{
+			tasks:[],
+			task:'',
+		},
+		methods:{
+			press:function(){
+				this.tasks.push(this.task);	
+				this.task = '';
+			}
+		}
+	})
+	</script>
+
+
+</body>
+</html>

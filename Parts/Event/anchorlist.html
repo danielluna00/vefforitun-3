@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		a {
+			display : block;
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+<a  v-for="item in anchors" :href="item">{{item}}</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: "#app",
+		data:{
+			anchors:[
+				'https://google.is',
+				'http://visir.is',
+				'https://9gag.com',
+				'https://facebook.com',
+			],
+		},
+	})
+	</script>
+
+
+</body>
+</html>

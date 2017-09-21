@@ -10,7 +10,8 @@
 </head>
 <body>
 <div id="app">
-<a  v-for="item in anchors" :href="item">{{item}}</a>
+<a @click.prevent="handleClick(item)" v-for="item in anchors" :href="item">{{item.link}}</a>
+<p>Virkar linkar er: {{activeLink}}</p>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
@@ -19,13 +20,19 @@
 		el: "#app",
 		data:{
 			anchors:[
-				'https://google.is',
-				'http://visir.is',
-				'https://9gag.com',
-				'https://facebook.com',
+				{link :'https://google.is'},
+				{link:'http://visir.is'},
+				{link:'https://9gag.com'},
+				{link : 'https://facebook.com'}
 			],
-		},
-	})
+			activeLink:''
+			},
+		methods:{
+			handleClick: function(item){
+				this.activeLink = item.link;
+			}
+		}
+	});
 	</script>
 
 

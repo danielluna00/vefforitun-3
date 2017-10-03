@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>CheckBox</title>
 </head>
 <body>
 <div id="app">
-	<input v-model="task" type="text" placeholder="Input">
-	<button @click="press">Create Task</button>
-	<li v-for= "item in tasks">{{item}}</li>
+<p>{{message}}</p>
+<p>{{reversedMessage}}</p>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
@@ -15,13 +14,11 @@
 	var app = new Vue({
 		el: "#app",
 		data:{
-			tasks:[],
-			task:'',
+			message:'Hallo Heimur'
 		},
-		methods:{
-			press:function(){
-				this.tasks.push(this.task);	
-				this.task = '';
+		computed:{
+			reversedMessage:function(){
+				return this.message.split('').reverse().join('')
 			}
 		}
 	})

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<div id="app">
+	<task-list>Fara í búðini</task-list>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+	Vue.component('task-list',{
+		template:`
+		<ul>
+		<task v-for="task in tasks">{{task.title}}</task>
+		<ul>
+		`,
+		data :function(){
+			return{
+				tasks:[
+					{title : "Fara í búðini" , complete:true},
+					{title : "Skoða Facebook" , complete:false},
+					{title : "Fara að borða" , complete:true},
+					{title : "Mæta í skólann" , complete:false},
+				]
+			};
+		}
+	});
+	var app = new Vue({
+		el: "#app",
+		data:{
+		},
+	})
+	</script>
+
+
+</body>
+</html>

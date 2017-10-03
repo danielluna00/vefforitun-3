@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+	.primary{
+		font-weight: bold;
+		color:red;
+	}
+</style>
+	<title>CheckBox</title>
+</head>
+<body>
+<div id="app">
+	<input type="checkbox" id="checkbox" v-model="check">
+	<label for="checkbox">Haka við</label>
+	<p v-bind:class = "{primary:check}">Hello</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: "#app",
+		data:{ 
+			check:true
+		},
+	})
+	</script>
+
+
+</body>
+</html>

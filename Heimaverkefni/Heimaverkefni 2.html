@@ -121,7 +121,7 @@ button {
   <ul class="list">
     <li v-for="task in taskList" v-bind:class="{done:task.checked}">
       <input type="checkbox" class="checkbox" v-model="task.checked">
-      <input type="text" v-model="change"><label for = "checkbox" v-bind:class="{done:task.text}" @click="press">{{ task.text }}</label>
+      <input type="text"><label for = "checkbox" v-bind:class="{done:task.text}" @click="press">{{ task.text }}</label>
       <button class="delete" v-on:click="removeTask(task)">X</button>
     </li>
   </ul>
@@ -148,8 +148,7 @@ var app = new Vue({
           edit:false, 
         });
       this.newTask = "";
-      this.change = "";
-   		}
+       		}
     },
     removeTask: function(task) {
       var index = this.taskList.indexOf(task);
@@ -166,13 +165,14 @@ var app = new Vue({
       } 
     },
     press:function(){
-        alert("hello")
-    }
-  },
+        
+        }
+      }
+    },
   computed:{
         areAllSelected: function() {
         return this.taskList.every(function(task) {
-        return task.edit;
+        return task.complete;
       })
       && this.taskList.length > 0;
     },
